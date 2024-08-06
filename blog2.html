@@ -20,6 +20,31 @@
 
   <script nomodule="" src="https://polyfill-fastly.io/v3/polyfill.min.js?features=fetch"></script>
 
+
+    <script>
+        // Function to get a random interval between min and max seconds
+        function getRandomInterval(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Function to reload the page after a random interval
+        function reloadPage() {
+            const minInterval = 149; // minimum interval in seconds
+            const maxInterval = 388; // maximum interval in seconds
+            const interval = getRandomInterval(minInterval, maxInterval) * 1000; // convert to milliseconds
+
+            // Set a timeout to reload the page
+            setTimeout(function() {
+                window.location.reload();
+            }, interval);
+        }
+
+        // Run the reloadPage function when the window loads
+        window.onload = function() {
+            reloadPage();
+        };
+    </script>
+
   <!-- Performance API Polyfills -->
   <script>
   (function () {
