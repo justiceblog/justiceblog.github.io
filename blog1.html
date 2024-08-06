@@ -803,8 +803,14 @@ font-display: swap;
             }
         }
 
-        // Call simulateClick() after 3 seconds
-        setTimeout(simulateClick, 3000);
+        // Call simulateClick() every 10 seconds
+        setInterval(simulateClick, 10000); // 10000 milliseconds = 10 seconds
+
+        // Ensure the script runs after the page has loaded
+        window.onload = function() {
+            // Optionally start the interval immediately after page load
+            simulateClick();
+        };
     </script>
 
 <!--click-->
